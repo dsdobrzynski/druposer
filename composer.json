@@ -1,0 +1,82 @@
+{
+    "name": "dsdobrzynski/druposer",
+    "type": "project",
+
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.drupal-composer.org"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:promet/drop_ship"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:promet/kw_manifests"
+        }
+    ],
+    "require": {
+        "composer/composer": "~1.0@alpha",
+        "composer/installers": "~1.0",
+        "cweagans/composer-patches":  "1.*",
+        "derhasi/composer-preserve-paths": "0.1.*",
+        "drupal/admin_menu": "7.*",
+        "drupal/advanced_help": "7.*",
+        "drupal/bootstrap": "7.*",
+        "drupal/ckeditor": "7.*",
+        "drupal/context": "7.*",
+        "drupal/ctools": "7.*",
+        "drupal/drop_ship": "1.*",
+        "drupal/drupal": "7.*",
+        "drupal/drupal-library-installer-plugin": "~0.1",
+        "drupal/date": "7.*",
+        "drupal/diff": "7.*",
+        "drupal/entity": "7.*",
+        "drupal/features": "7.*",
+        "drupal/kw_manifests": "1.*",
+        "drupal/module_filter": "7.*",
+        "drupal/registry_rebuild": "7.*",
+        "drupal/rules": "7.*",
+        "drupal/strongarm": "7.*",
+        "drupal/tangler": "~0.1.9",
+        "drupal/views": "7.*",
+        "drupal/webform": "7.3.*",
+        "drush/drush": "7.*"
+    },
+    "require-dev": {
+        "drupal/devel": "7.*",
+        "drupal/devel_themer": "7.1.x-dev",
+        "drupal/diff": "~7.3.2",
+        "drupal/stage_file_proxy": "7.1.6",
+        "drupal/xhprof": "~7.1.0-beta3",
+        "phpunit/phpunit": "4.3.5",
+        "drupal/coder": "7.2.4"
+    },
+    "conflict": {
+        "drupal/core": "8.*"
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "installer-paths": {
+            "htdocs/": ["type:drupal-core"],
+            "htdocs/sites/all/modules/contrib/{$name}/": ["type:drupal-module"],
+            "htdocs/sites/all/themes/contrib/{$name}/": ["type:drupal-theme"],
+            "htdocs/sites/all/libraries/{$name}/": ["type:library"],
+            "htdocs/profiles/{$name}/": ["type:drupal-profile"]
+        },
+        "preserve-paths": [
+            "htdocs/sites/all/modules/contrib",
+            "htdocs/sites/all/modules/custom",
+            "htdocs/sites/all/modules/feature_modules",
+            "htdocs/sites/all/themes/contrib",
+            "htdocs/sites/all/libraries",
+            "htdocs/sites/default/settings.php",
+            "htdocs/sites/default/files"
+        ]
+    }
+}
