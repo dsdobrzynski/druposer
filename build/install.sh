@@ -1,12 +1,10 @@
 #!/bin/bash
 set -e
-path=$(dirname "$0")
-base=$(cd $path/.. && pwd)
-true=`which true`
-source $path/common.sh
+path="$(dirname "$0")"
+true="$(which true)"
+source "$path/common.sh"
 
 echo "Installing site...";
-cd $base/htdocs
 sqlfile=$base/build/ref/$PROJECT.sql
 gzipped_sqlfile=$sqlfile.gz
 if [ -e "$gzipped_sqlfile" ]; then
@@ -23,8 +21,10 @@ else
   drupal_admin=${drupal_admin:-admin}
   read -p "Drupal admin password (default: 'pass'): " drupal_password
   drupal_password=${drupal_password:-pass}
+  read -p "Drupal site name (default: 'Site-Install'): " drupal_sitename
+  drupal_sitename=${drupal_sitename:-Site-Install}
 # Setting PHP Options so that we don't fail while sending mail if a mail sytem
 # doesn't exist.
-  PHP_OPTIONS="-d sendmail_path=`which true`" $drush si minimal --account-name=$drupal_admin --account-pass=$drupal_password
+  PHP_OPTIONS="-d sendmail_path=`which true`" $drush si minimal --account-name=$drupal_admin --account-pass=$drupal_password --site-name=$drupal_sitename
 fi
-source $path/update.sh
+source "$path/update.sh"

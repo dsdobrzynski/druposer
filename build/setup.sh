@@ -76,5 +76,5 @@ then
   sed -i '' "s/'port' => '3306',/'port' => '$port',/" $base/htdocs/sites/default/settings.local.php
   sed -i '' "s/'prefix' => '',/'prefix' => '$prefix',/" $base/htdocs/sites/default/settings.local.php
 fi
-
-source $path/install.sh
+pwd
+source "$path/install.sh"
