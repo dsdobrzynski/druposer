@@ -42,7 +42,7 @@
         "drupal/tangler": "~0.1.9",
         "drupal/views": "7.*",
         "drupal/webform": "7.3.*",
-        "drush/drush": "7.*"
+        "drush/drush": "6.*"
     },
     "require-dev": {
         "drupal/devel": "7.*",
