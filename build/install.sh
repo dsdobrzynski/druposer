@@ -25,6 +25,6 @@ else
   drupal_sitename=${drupal_sitename:-Site-Install}
 # Setting PHP Options so that we don't fail while sending mail if a mail sytem
 # doesn't exist.
-  PHP_OPTIONS="-d sendmail_path=`which true`" $drush si minimal --account-name=$drupal_admin --account-pass=$drupal_password --site-name=$drupal_sitename
+  PHP_OPTIONS="-d sendmail_path=`which true`" $drush si minimal --account-name=$drupal_admin --account-pass=$drupal_password --site-name="$drupal_sitename"
 fi
 source "$path/update.sh"
