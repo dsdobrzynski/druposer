@@ -8,6 +8,7 @@ htdocs/*
 # Don't ignore necessary parent dirs and files
 !htdocs/sites
 !htdocs/sites/default
+!htdocs/sites/default/settings.php
 !htdocs/sites/all
 # But ignore contrib and libraries
 htdocs/sites/all/modules/contrib
@@ -15,7 +16,7 @@ htdocs/sites/all/themes/contrib
 htdocs/sites/all/libraries
 
 # Ignore local settings file
-#htdocs/sites/default/settings.local.php
+htdocs/sites/default/settings.local.php
 
 # Ignore Composer vendor dir
 vendor
